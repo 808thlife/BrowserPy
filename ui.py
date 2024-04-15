@@ -21,15 +21,16 @@ class MainWindow(QMainWindow):
         
         self.setCentralWidget(self.browser)
         
-        #navbar on the top. 
         self.setWindowTitle("BrowserPy")
 
+        #toolbar on the top. 
         toolbar = QToolBar("Toolbar")
         self.addToolBar(toolbar)
 
         #refresh page
-        button_action = QAction(QIcon(os.path.join("assets", "img","refresh.png")),"Refresh", self)
+        button_action = QAction(QIcon(os.path.join("assets", "img","refresh.png")),"Refresh", self) # added a button
         button_action.setStatusTip("Refreshing current page")
+        #connect to function
         button_action.triggered.connect(self.refresh_page)
         toolbar.addAction(button_action)
 
