@@ -30,7 +30,7 @@ class MainWindow(QMainWindow):
         #refresh page
         button_action = QAction(QIcon(os.path.join("assets", "img","refresh.png")),"Refresh", self) # added a button
         button_action.setStatusTip("Refreshing current page")
-        #connect to function
+        #connect to a function
         button_action.triggered.connect(self.refresh_page)
         toolbar.addAction(button_action)
 
@@ -39,11 +39,14 @@ class MainWindow(QMainWindow):
         self.shortcut.activated.connect(self.refresh_page)
 
         self.setStatusBar(QStatusBar(self))
+        
 
         self.show()
         
     def refresh_page(self):
         self.browser.reload()
+
+        
 
 
 
